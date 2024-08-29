@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using Microsoft.Data.SqlClient;
+using MySqlConnector;
 
 namespace DataAccessLayer
 {
@@ -7,9 +8,9 @@ namespace DataAccessLayer
     {
         static string connectionString = "server=localhost;database=report_city;uid=root;pwd='';";
 
-        SqlConnection conn = new(connectionString);
+        MySqlConnection conn = new MySqlConnection(connectionString);
 
-        SqlCommand? cmd;
+        MySqlCommand? cmd;
 
         void OpenCloseDatabase()
         {
@@ -27,8 +28,8 @@ namespace DataAccessLayer
         public void CreateIssue(string location, string category, string description, string image)
         {
             OpenCloseDatabase();
-            string sql = $"insert into Issues(location, category, description, image) values('{location}', '{category}', '{description}', '{image}')";\
-            cmd = new SqlCommand(sql, conn);
+            string sql = $"insert into issues(location, category, description, image) values('{location}', '{category}', '{description}', '{image}')";
+            cmd = new MySqlCommand(sql, conn);
             cmd.ExecuteNonQuery();
         }
     }

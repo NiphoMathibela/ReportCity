@@ -139,6 +139,7 @@
             btnSubmit.TabIndex = 8;
             btnSubmit.Text = "Submit";
             btnSubmit.UseVisualStyleBackColor = false;
+            btnSubmit.Click += btnSubmit_Click;
             // 
             // btnBack
             // 

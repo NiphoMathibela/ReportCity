@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,28 @@ namespace WinFormsApp1
         public FrmReportIssues()
         {
             InitializeComponent();
+        }
+
+        //Business Class Object
+        BusinessLayer.BusinessClass BusinessObject = new BusinessLayer.BusinessClass();
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            string location = txtLocation.Text;
+            string category = "Pot Hole";
+            string description = txtDescription.Text;
+            string image = "An image";
+
+            //Saves User Input To DB
+            BusinessObject.CreateIssue(location, category, description, image);
+
+            //Message box upon successful save
+            MessageBox.Show("Your issue has been logged...");
+
+            //Clear Inputs
+            txtLocation.Text = "";
+            listCategory.Text = "";
+            txtDescription.Text = "";
         }
     }
 }

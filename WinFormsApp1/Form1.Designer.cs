@@ -41,6 +41,7 @@
             btnReport.TabIndex = 0;
             btnReport.Text = "Report Issues";
             btnReport.UseVisualStyleBackColor = true;
+            btnReport.Click += btnReport_Click;
             // 
             // btnEvents
             // 

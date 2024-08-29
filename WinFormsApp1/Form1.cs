@@ -11,5 +11,13 @@ namespace WinFormsApp1
         {
 
         }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            FrmReportIssues form = new FrmReportIssues();
+            this.Hide();
+            form.ShowDialog();
+            this.Visible = true;
+        }
     }
 }

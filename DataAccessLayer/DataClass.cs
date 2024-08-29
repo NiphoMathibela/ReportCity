@@ -22,5 +22,14 @@ namespace DataAccessLayer
                 conn.Close();
             }
         }
+
+        //Creating an issue
+        public void CreateIssue(string location, string category, string description, string image)
+        {
+            OpenCloseDatabase();
+            string sql = $"insert into Issues(location, category, description, image) values('{location}', '{category}', '{description}', '{image}')";\
+            cmd = new SqlCommand(sql, conn);
+            cmd.ExecuteNonQuery();
+        }
     }
 }

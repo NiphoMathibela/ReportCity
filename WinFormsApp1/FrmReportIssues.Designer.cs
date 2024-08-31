@@ -126,6 +126,7 @@
             btnImage.TabIndex = 7;
             btnImage.Text = "Select Image";
             btnImage.UseVisualStyleBackColor = false;
+            btnImage.Click += btnImage_Click;
             // 
             // btnSubmit
             // 

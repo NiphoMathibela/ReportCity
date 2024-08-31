@@ -45,5 +45,21 @@ namespace WinFormsApp1
             txtDescription.Text = "";
             listCategory.Text = "";
         }
+
+        private void btnImage_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.InitialDirectory = @"C:\";
+            openFileDialog1.Filter = "*.jpg, *.jpeg, *.png, *.gif, *.bmp)|*.jpg;*.jpeg;*.png;*.gif;*.bmp\"";
+            openFileDialog1.FilterIndex = 1;
+            openFileDialog1.RestoreDirectory = true;
+
+            //Show opendialog
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                // get the selected file path
+                string filePath = openFileDialog1.FileName;
+                // do something with the file path
+            }
+        }
     }
 }

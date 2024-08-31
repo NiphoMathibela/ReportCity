@@ -77,14 +77,14 @@
             listCategory.ItemHeight = 18;
             listCategory.Location = new Point(50, 140);
             listCategory.Name = "listCategory";
-            listCategory.Size = new Size(369, 22);
+            listCategory.Size = new Size(369, 148);
             listCategory.TabIndex = 3;
             // 
             // lblDescription
             // 
             lblDescription.AutoSize = true;
             lblDescription.Font = new Font("Tahoma", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblDescription.Location = new Point(50, 198);
+            lblDescription.Location = new Point(50, 320);
             lblDescription.Name = "lblDescription";
             lblDescription.Size = new Size(97, 22);
             lblDescription.TabIndex = 4;
@@ -94,9 +94,9 @@
             // 
             txtDescription.BorderStyle = BorderStyle.FixedSingle;
             txtDescription.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtDescription.Location = new Point(50, 220);
+            txtDescription.Location = new Point(50, 345);
             txtDescription.Name = "txtDescription";
-            txtDescription.Size = new Size(369, 108);
+            txtDescription.Size = new Size(369, 142);
             txtDescription.TabIndex = 5;
             txtDescription.Text = "";
             // 
@@ -104,7 +104,7 @@
             // 
             lblFile.AutoSize = true;
             lblFile.Font = new Font("Tahoma", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblFile.Location = new Point(50, 352);
+            lblFile.Location = new Point(50, 552);
             lblFile.Name = "lblFile";
             lblFile.Size = new Size(60, 22);
             lblFile.TabIndex = 6;
@@ -120,7 +120,7 @@
             btnImage.FlatStyle = FlatStyle.Popup;
             btnImage.Font = new Font("Tahoma", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnImage.ForeColor = SystemColors.Control;
-            btnImage.Location = new Point(50, 374);
+            btnImage.Location = new Point(50, 577);
             btnImage.Name = "btnImage";
             btnImage.Size = new Size(160, 31);
             btnImage.TabIndex = 7;
@@ -133,7 +133,7 @@
             btnSubmit.FlatStyle = FlatStyle.Popup;
             btnSubmit.Font = new Font("Tahoma", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSubmit.ForeColor = SystemColors.Control;
-            btnSubmit.Location = new Point(50, 469);
+            btnSubmit.Location = new Point(50, 691);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(160, 31);
             btnSubmit.TabIndex = 8;
@@ -147,7 +147,7 @@
             btnBack.FlatStyle = FlatStyle.Popup;
             btnBack.Font = new Font("Tahoma", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnBack.ForeColor = SystemColors.Control;
-            btnBack.Location = new Point(240, 469);
+            btnBack.Location = new Point(240, 691);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(160, 31);
             btnBack.TabIndex = 9;
@@ -159,7 +159,7 @@
             AutoScaleDimensions = new SizeF(8F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(968, 510);
+            ClientSize = new Size(1184, 807);
             Controls.Add(btnBack);
             Controls.Add(btnSubmit);
             Controls.Add(btnImage);

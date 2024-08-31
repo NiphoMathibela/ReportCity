@@ -16,15 +16,20 @@ namespace WinFormsApp1
         public FrmReportIssues()
         {
             InitializeComponent();
+
+            List<string> categories = new List<string> { "Roads & Traffic", "Waste Management", "Water & Sewage", "Electricity", "Transportation" };
+            listCategory.DataSource = categories;
         }
 
         //Business Class Object
         BusinessLayer.BusinessClass BusinessObject = new BusinessLayer.BusinessClass();
 
+        //Categories
+
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             string location = txtLocation.Text;
-            string category = "Pot Hole";
+            string category = listCategory.Text;
             string description = txtDescription.Text;
             string image = "An image";
 
@@ -38,6 +43,7 @@ namespace WinFormsApp1
             txtLocation.Text = "";
             listCategory.Text = "";
             txtDescription.Text = "";
+            listCategory.Text = "";
         }
     }
 }

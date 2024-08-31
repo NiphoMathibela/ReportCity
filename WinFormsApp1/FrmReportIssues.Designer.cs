@@ -39,6 +39,9 @@
             btnImage = new Button();
             btnSubmit = new Button();
             btnBack = new Button();
+            pictureBox1 = new PictureBox();
+            slctImage = new Label();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // lblLocation
@@ -64,7 +67,7 @@
             // 
             lblCategory.AutoSize = true;
             lblCategory.Font = new Font("Tahoma", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCategory.Location = new Point(50, 117);
+            lblCategory.Location = new Point(50, 139);
             lblCategory.Name = "lblCategory";
             lblCategory.Size = new Size(80, 22);
             lblCategory.TabIndex = 2;
@@ -75,9 +78,9 @@
             listCategory.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             listCategory.FormattingEnabled = true;
             listCategory.ItemHeight = 18;
-            listCategory.Location = new Point(50, 140);
+            listCategory.Location = new Point(50, 162);
             listCategory.Name = "listCategory";
-            listCategory.Size = new Size(369, 148);
+            listCategory.Size = new Size(369, 112);
             listCategory.TabIndex = 3;
             // 
             // lblDescription
@@ -155,12 +158,32 @@
             btnBack.Text = "Back";
             btnBack.UseVisualStyleBackColor = false;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(509, 68);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(579, 419);
+            pictureBox1.TabIndex = 10;
+            pictureBox1.TabStop = false;
+            // 
+            // slctImage
+            // 
+            slctImage.AutoSize = true;
+            slctImage.Font = new Font("Tahoma", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            slctImage.Location = new Point(500, 46);
+            slctImage.Name = "slctImage";
+            slctImage.Size = new Size(131, 22);
+            slctImage.TabIndex = 11;
+            slctImage.Text = "Selected Image";
+            // 
             // FrmReportIssues
             // 
             AutoScaleDimensions = new SizeF(8F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1184, 807);
+            Controls.Add(slctImage);
+            Controls.Add(pictureBox1);
             Controls.Add(btnBack);
             Controls.Add(btnSubmit);
             Controls.Add(btnImage);
@@ -174,6 +197,7 @@
             Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Name = "FrmReportIssues";
             Text = "Report Issues";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -191,5 +215,7 @@
         private Button btnImage;
         private Button btnSubmit;
         private Button btnBack;
+        private PictureBox pictureBox1;
+        private Label slctImage;
     }
 }

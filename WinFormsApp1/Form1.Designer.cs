@@ -51,6 +51,7 @@
             btnEvents.TabIndex = 1;
             btnEvents.Text = "Events and Announcements";
             btnEvents.UseVisualStyleBackColor = true;
+            btnEvents.Click += btnEvents_Click;
             // 
             // btnService
             // 

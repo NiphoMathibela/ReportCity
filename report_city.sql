@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 17, 2024 at 02:37 PM
+-- Generation Time: Oct 21, 2024 at 10:58 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -46,6 +46,32 @@ INSERT INTO `categories` (`Id`, `Name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `events`
+--
+
+CREATE TABLE `events` (
+  `Id` int(11) NOT NULL,
+  `Title` varchar(250) DEFAULT NULL,
+  `Description` varchar(250) DEFAULT NULL,
+  `Date` datetime NOT NULL,
+  `Location` varchar(250) DEFAULT NULL,
+  `Priority` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `events`
+--
+
+INSERT INTO `events` (`Id`, `Title`, `Description`, `Date`, `Location`, `Priority`) VALUES
+(1, 'Event 1', 'Description 1', '2024-10-14 00:00:00', 'Location 1', 'High'),
+(2, 'Event 2', 'Description 2', '2024-10-15 00:00:00', 'Location 2', 'Medium'),
+(3, 'Event 3', 'Description 3', '2024-10-16 00:00:00', 'Location 3', 'Low'),
+(4, 'Event 4', 'Description 4', '2024-10-17 00:00:00', 'Location 4', 'High'),
+(5, 'Event 5', 'Description 5', '2024-10-18 00:00:00', 'Location 5', 'Medium');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `issues`
 --
 
@@ -75,6 +101,12 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`Id`);
 
 --
+-- Indexes for table `events`
+--
+ALTER TABLE `events`
+  ADD PRIMARY KEY (`Id`);
+
+--
 -- Indexes for table `issues`
 --
 ALTER TABLE `issues`
@@ -89,6 +121,12 @@ ALTER TABLE `issues`
 --
 ALTER TABLE `categories`
   MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `events`
+--
+ALTER TABLE `events`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `issues`

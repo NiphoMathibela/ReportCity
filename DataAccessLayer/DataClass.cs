@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using DataAccessLayer.Models;
+using Microsoft.Data.SqlClient;
 using MySqlConnector;
 
 namespace DataAccessLayer
@@ -31,6 +32,38 @@ namespace DataAccessLayer
             string sql = $"insert into issues(location, category, description, image) values('{location}', '{category}', '{description}', '{image}')";
             cmd = new MySqlCommand(sql, conn);
             cmd.ExecuteNonQuery();
+        }
+
+        //Getting Issues from DB
+        public List<IssueModel> GetIssues()
+        {
+            List<IssueModel> issues = new List<IssueModel>();
+
+            using (var conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT ReportId, Location, Category, Description, Image, Status FROM Issues";
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            issues.Add(new IssueModel
+                            {
+                                Id = reader.GetInt32(0),
+                                Location = reader.GetString(1),
+                                Category = reader.GetString(2),
+                                Description = reader.GetString(3),
+                                ImagePath = reader.GetString(4),
+                                Status = reader.GetString(5)
+                            });
+                        }
+                    }
+                }
+            }
+
+            return issues;
         }
 
         //Retrieving events

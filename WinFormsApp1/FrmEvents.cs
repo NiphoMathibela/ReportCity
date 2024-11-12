@@ -11,32 +11,36 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace WinFormsApp1
 {
     public partial class FrmEvents : Form
     {
         public Dictionary<DateTime, string> announcementList = new Dictionary<DateTime, string>();
+
         public FrmEvents()
         {
             InitializeComponent();
 
             // Populate the dictionary with sample announcements
-            announcementList.Add(DateTime.Now.AddDays(-2), "Community meeting tomorrow at 10 AM.");
-            announcementList.Add(DateTime.Now.AddDays(-2), "Road closure on the R21 from 2 PM.");
-            announcementList.Add(DateTime.Now.AddDays(-2), "Community council meeting at 4 PM.");
+            announcementList.Add(DateTime.Now.AddDays(-2), "Malebo Community meeting tomorrow at 10 AM.");
+            announcementList.Add(DateTime.Now.AddDays(-2), "Kempton Park road opening on the R21 from 2 PM.");
+            announcementList.Add(DateTime.Now.AddDays(-2), "Park cleanup.");
+
+            // Populating the Event Hash Set with Mock data
+            eventHashSet.Add("Malebo community meeting: " + DateTime.Now.ToString());
+            eventHashSet.Add("Kempton Park community meeting: " + DateTime.Now.ToString());
+            eventHashSet.Add("Park clean up: " + DateTime.Now.ToString());
+
+            dataGridView1.DataSource = eventHashSet.Select(x => new { Event = x }).ToList();
 
             // Bind the dictionary to the DataGridView
-            dataGridView1.DataSource = new BindingSource(announcementList, null);
-            dataGridView1.Columns[0].HeaderText = "Date";
-            dataGridView1.Columns[1].HeaderText = "Announcement";
+            //dataGridView1.DataSource = new BindingSource(announcementList, null);
+            //dataGridView1.Columns[0].HeaderText = "Date";
+            //dataGridView1.Columns[1].HeaderText = "Announcement";
 
             //Business class object
             BusinessClass businessObject = new BusinessClass();
-
-            //Displaying all events 
-            //List<EventModel> events = businessObject.GetEvents();
-
-            //dataGridEvents.DataSource = events;
 
             //Displaying announcements using a Stack
             Stack<AnnouncementModel> announcements = new Stack<AnnouncementModel>();
@@ -65,6 +69,12 @@ namespace WinFormsApp1
         //Event List
         HashSet<string> eventHashSet = new HashSet<string>();
 
+        //Search Term List
+        List<string> searchHistory = new List<string>();
+
+        //Recommendations list
+        List<string> recomendations = new List<string>();
+
         private void lblEvents_Click(object sender, EventArgs e)
         {
 
@@ -73,26 +83,36 @@ namespace WinFormsApp1
         //Search Function
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            // Search functionality
             string searchText = txtSearch.Text;
 
-            HashSet<string> searchSet = new HashSet<string>();
+            //Add search term to histroy
+            searchHistory.Add(searchText);
 
-            // Assuming eventHashSet is already populated
-            eventHashSet.Add("Malebo community meeting 28/10/2024");
-            eventHashSet.Add("Kempton Park community meeting 28/11/2024");
-            eventHashSet.Add("Park clean up 28/10/2024");
-
-            // Search using Contains
-            foreach (var item in eventHashSet)
+            HashSet<string> searchSet = new HashSet<string>(); 
+            
+            //Check if searchText contains any text before searching
+            if(searchText != null)
             {
-                if (item.ToLower().Contains(searchText.ToLower()))
+
+                // Search using Contains
+                foreach (var item in eventHashSet)
                 {
-                    searchSet.Add(item);
+                    if (item.ToLower().Contains(searchText.ToLower()))
+                    {
+                        //Adds searched item to search result collection
+                        searchSet.Add(item);
+
+                        //Adds searched item to recommendations collection
+                        recomendations.Add(item);
+                    }
                 }
             }
 
+            //Displays search results
             dataGridViewResults.DataSource = searchSet.Select(x => new { Event = x }).ToList();
+
+            //Display recommnedation Set
+            dataGridView3.DataSource = recomendations.Select(x => new { Event = x }).ToList() ;
         }
     }
 }

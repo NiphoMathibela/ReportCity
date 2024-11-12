@@ -61,6 +61,7 @@
             btnService.TabIndex = 2;
             btnService.Text = "Service Request Status";
             btnService.UseVisualStyleBackColor = true;
+            btnService.Click += btnService_Click;
             // 
             // Form1
             // 

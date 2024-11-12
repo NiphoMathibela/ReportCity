@@ -27,5 +27,13 @@ namespace WinFormsApp1
             form.ShowDialog();
             this.Visible = true;
         }
+
+        private void btnService_Click(object sender, EventArgs e)
+        {
+            FrmStatus form = new FrmStatus();
+            this.Hide();
+            form.ShowDialog();
+            this.Visible = true;
+        }
     }
 }

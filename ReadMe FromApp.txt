@@ -21,11 +21,11 @@ Setting Up The DB
 
 7.1 The following link "https://www.youtube.com/watch?v=ueWpNe0PG34" is for a video with a detailed description on how to use Xampp and create a database in PHPMyAdmin.
 
-8. After pasting the data, run the SQL query in the database. The query will create all neccessary tables and add the appropriate data.
+8. After pasting the data, run the SQL query in the database. The query will create all necessary tables and add the appropriate data.
 
 8.1. Ensure that you edit the issues table and set the "ReportId" to Auto Increment.
 
-9. Once the database has been created and data has been added, you can now open the C# solution in Visual Studio Code. You can open Visual Studio code and open the project folder in Visual Studio. You can then proceed to run the project in Vusual Studio Code.
+9. Once the database has been created and data has been added, you can now open the C# solution in Visual Studio Code. You can open Visual Studio code and open the project folder in Visual Studio. You can then proceed to run the project in Visual Studio Code.
 
 
 

@@ -62,29 +62,6 @@ namespace WinFormsApp1
                 // do something with the file path
                 pictureBox1.Image = Image.FromFile(filePath);
                 pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-
-                // Convert the image to a binary format
-                //using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read))
-                //{
-                //    byte[] imageBytes = new byte[fs.Length];
-                //    fs.Read(imageBytes, 0, imageBytes.Length); 
-
-                //    // Save the image to the database
-                //    string connectionString = "Data Source=<your_server>;Initial Catalog=<your_database>;User ID=<your_username>;Password=<your_password>";
-                //    using (SqlConnection connection = new SqlConnection(connectionString))
-                //    {
-                //        connection.Open();
-
-                //        string query = "INSERT INTO Images (ImageName, ImageData) VALUES (@ImageName, @ImageData)";
-                //        using (SqlCommand command = new SqlCommand(query, connection))
-                //        {
-                //            command.Parameters.AddWithValue("@ImageName", Path.GetFileName(filePath));
-                //            command.Parameters.AddWithValue("@ImageData", imageBytes);
-
-                //            command.ExecuteNonQuery();
-                //        }
-                //    }
-                //}
             }
         }
     }

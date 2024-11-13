@@ -8,11 +8,13 @@ namespace DataAccessLayer.Models
 {
     public class Issue
     {
-        public int Id { get; set; } // Assuming there's an ID for each issue
+        public int Id { get; set; }
         public string Location { get; set; }
         public string Category { get; set; }
         public string Description { get; set; }
-        public string ImagePath { get; set; } // Path to the image file
-        public string Status { get; set; } // Status of the request (e.g., Open, In Progress, Closed)
+        public string ImagePath { get; set; }
+        public string Status { get; set; } 
+
+        public string? Priority { get; set; }
     }
 }

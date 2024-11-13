@@ -30,6 +30,8 @@
         {
             listViewIssues = new ListView();
             lblIssues = new Label();
+            listViewHeap = new ListView();
+            lblHeap = new Label();
             SuspendLayout();
             // 
             // listViewIssues
@@ -51,11 +53,31 @@
             lblIssues.Text = "Reported Issues";
             lblIssues.Click += lblEvents_Click;
             // 
+            // listViewHeap
+            // 
+            listViewHeap.Location = new Point(701, 127);
+            listViewHeap.Name = "listViewHeap";
+            listViewHeap.Size = new Size(607, 363);
+            listViewHeap.TabIndex = 2;
+            listViewHeap.UseCompatibleStateImageBehavior = false;
+            // 
+            // lblHeap
+            // 
+            lblHeap.AutoSize = true;
+            lblHeap.Font = new Font("Segoe UI Black", 20F, FontStyle.Bold);
+            lblHeap.Location = new Point(701, 62);
+            lblHeap.Name = "lblHeap";
+            lblHeap.Size = new Size(391, 46);
+            lblHeap.TabIndex = 3;
+            lblHeap.Text = "Sorted by  importance";
+            // 
             // FrmStatus
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1073, 674);
+            ClientSize = new Size(1363, 674);
+            Controls.Add(lblHeap);
+            Controls.Add(listViewHeap);
             Controls.Add(lblIssues);
             Controls.Add(listViewIssues);
             Name = "FrmStatus";
@@ -69,5 +91,7 @@
 
         private ListView listViewIssues;
         private Label lblIssues;
+        private ListView listViewHeap;
+        private Label lblHeap;
     }
 }

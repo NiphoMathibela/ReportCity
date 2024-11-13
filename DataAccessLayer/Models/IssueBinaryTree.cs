@@ -14,8 +14,9 @@ namespace DataAccessLayer.Models
         public string Location { get; set; }
         public string Category { get; set; }
         public string Description { get; set; }
-        public string ImagePath { get; set; } // Path to the image file
-        public string? Status { get; set; } // Status of the request (e.g., Open, In Progress, Closed)
+        public string ImagePath { get; set; }
+        public string? Status { get; set; }
+        public int? Priority { get; set; }
     }
 
     // TreeNode class for the binary tree
@@ -55,7 +56,7 @@ namespace DataAccessLayer.Models
                 return new TreeNode(issue);
             }
 
-            if (issue.Id < root.Issue.Id) // Change this to another property if needed
+            if (issue.Id < root.Issue.Id)
             {
                 root.Left = InsertRec(root.Left, issue);
             }
@@ -71,7 +72,6 @@ namespace DataAccessLayer.Models
             return root;
         }
 
-        // Optional: In-order traversal to get issues in sorted order
         public List<IssueModel> InOrderTraversal()
         {
             List<IssueModel> issues = new List<IssueModel>();

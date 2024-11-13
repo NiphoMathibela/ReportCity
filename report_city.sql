@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 21, 2024 at 10:58 PM
+-- Generation Time: Nov 13, 2024 at 09:48 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -80,15 +80,27 @@ CREATE TABLE `issues` (
   `Location` varchar(250) NOT NULL,
   `Description` varchar(250) NOT NULL,
   `Category` varchar(250) NOT NULL,
-  `Image` varchar(250) DEFAULT NULL
+  `Image` varchar(250) DEFAULT NULL,
+  `Status` varchar(250) NOT NULL,
+  `Priority` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `issues`
 --
 
-INSERT INTO `issues` (`ReportId`, `Location`, `Description`, `Category`, `Image`) VALUES
-(1, 'Pitori', 'PotHole', 'Pot Hole', 'An image');
+INSERT INTO `issues` (`ReportId`, `Location`, `Description`, `Category`, `Image`, `Status`, `Priority`) VALUES
+(1, 'Pitori', 'PotHole', 'Pot Hole', 'An image', 'Closed', 2),
+(2, 'Pretoria', 'Pot Hole on Main Street', 'Pot Hole', 'path/to/image1.jpg', 'Closed', 2),
+(3, 'Pretoria', 'Street Light Out on 5th Ave', 'Electrical', 'path/to/image2.jpg', 'Open', 1),
+(4, 'Pretoria', 'Graffiti on Wall at Park', 'Vandalism', 'path/to/image3.jpg', 'In Progress', 3),
+(5, 'Pretoria', 'Water Leak Near Intersection', 'Plumbing', 'path/to/image4.jpg', 'Closed', 2),
+(6, 'Pretoria', 'Traffic Signal Malfunction', 'Traffic', 'path/to/image5.jpg', 'Open', 1),
+(7, 'Pretoria', 'Sidewalk Cracked Near School', 'Infrastructure', 'path/to/image6.jpg', 'Pending', 4),
+(8, 'Pretoria', 'Overflowing Trash Bin on 2nd St', 'Sanitation', 'path/to/image7.jpg', 'Closed', 3),
+(9, 'Pretoria', 'Missing Manhole Cover', 'Safety', 'path/to/image8.jpg', 'Open', 1),
+(10, 'Pretoria', 'Pothole Repair Needed on Elm St', 'Pot Hole', 'path/to/image9.jpg', 'In Progress', 2),
+(11, 'Pretoria', 'Broken Bench in Park', 'Maintenance', 'path/to/image10.jpg', 'Closed', 2);
 
 --
 -- Indexes for dumped tables
@@ -132,7 +144,7 @@ ALTER TABLE `events`
 -- AUTO_INCREMENT for table `issues`
 --
 ALTER TABLE `issues`
-  MODIFY `ReportId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ReportId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

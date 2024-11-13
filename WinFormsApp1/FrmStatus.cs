@@ -20,7 +20,7 @@ namespace WinFormsApp1
 
             LoadIssues();
             InitializeListView();
-            LoadAndDisplayIssues(); // Load and display issues in the heap
+            LoadAndDisplayIssues();
         }
 
         private void InitializeListView()
@@ -35,7 +35,7 @@ namespace WinFormsApp1
             listViewIssues.Columns.Add("Status", 100);
 
             // Set the ListView properties for the heap
-            listViewHeap.View = View.Details; // Assuming listViewHeap is already declared and initialized
+            listViewHeap.View = View.Details;
             listViewHeap.FullRowSelect = true;
             listViewHeap.Columns.Add("Location", 100);
             listViewHeap.Columns.Add("Category", 100);
@@ -46,11 +46,11 @@ namespace WinFormsApp1
 
         private void LoadIssues()
         {
-            var issues = dataClass.GetIssues(); // Retrieve issues from the database
+            var issues = dataClass.GetIssues();
             foreach (var issue in issues)
             {
-                issueTree.Insert(issue); // Insert each issue into the binary tree
-                AddIssueToTreeView(issue); // Add the issue to the binary tree ListView
+                issueTree.Insert(issue); 
+                AddIssueToTreeView(issue);
             }
         }
 
@@ -69,13 +69,13 @@ namespace WinFormsApp1
 
         private void LoadAndDisplayIssues()
         {
-            issueHeap = PopulateHeapWithIssues(); // Populate the heap with issues
-            DisplayHeapInListView(issueHeap); // Display the heap in the ListView for the heap
+            issueHeap = PopulateHeapWithIssues();
+            DisplayHeapInListView(issueHeap); 
         }
 
         private MinHeap PopulateHeapWithIssues()
         {
-            List<IssueModel> issues = dataClass.GetIssues(); // Fetch issues from the database
+            List<IssueModel> issues = dataClass.GetIssues();
             MinHeap issueHeap = new MinHeap();
 
             // Insert all issues into the heap
@@ -89,14 +89,14 @@ namespace WinFormsApp1
 
         private void DisplayHeapInListView(MinHeap issueHeap)
         {
-            listViewHeap.Items.Clear(); // Clear existing items in the heap ListView
+            listViewHeap.Items.Clear();
 
             // Extract elements from the heap until it's empty
             while (true)
             {
                 try
                 {
-                    IssueModel issue = issueHeap.RemoveMin(); // Get the issue with the highest priority
+                    IssueModel issue = issueHeap.RemoveMin();
                     var item = new ListViewItem(issue.Location);
                     item.SubItems.Add(issue.Category);
                     item.SubItems.Add(issue.Description);

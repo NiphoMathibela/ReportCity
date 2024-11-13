@@ -31,7 +31,7 @@ namespace DataAccessLayer.Models
             while (index > 0)
             {
                 int parentIndex = (index - 1) / 2;
-                if (heap[index].Priority < heap[parentIndex].Priority) // Adjust this condition based on your priority logic
+                if (heap[index].Priority < heap[parentIndex].Priority)
                 {
                     // Swap
                     IssueModel temp = heap[index];

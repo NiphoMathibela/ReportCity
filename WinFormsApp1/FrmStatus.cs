@@ -56,5 +56,15 @@ namespace WinFormsApp1
             // Add the item to the ListView
             listViewIssues.Items.Add(item);
         }
+
+        private void lblEvents_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmStatus_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
